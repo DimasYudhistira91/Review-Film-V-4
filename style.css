@@ -14,37 +14,28 @@
   width: 150px;
 }
 
-#form {
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-}
-
 #isi-form {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 
-#jf, #tf, #gf {
+.jf, .tf{
   width: 250px;
 }
 
-#rf {
-  width: 480px;
+.rf {
+  width: auto;
 }
 
-#review-film {
-  height: 150px;
-}
-
-
-/* _______________________________________________________________ */
-/* Daftar Film CSS */
-
-#cont-table {
-  border-bottom: 1px solid grey;
+#simpan {
+  width: 100px;
 }
 
 #table {
   margin-top: 30px;
+}
+
+td {
+  text-align: center;
 }

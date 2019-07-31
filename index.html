@@ -29,20 +29,20 @@
         </form>
       </nav>
       <div id="form" class="container">
-      <form id="isi-form">
-        <div id="jf" class="form-group">
+      <form id="film-form">
+        <div class="form-group jf">
           <label for="judul-film">Judul Film</label>
-          <input type="text" class="form-control" id="judul-film" placeholder="Enter Judul">
+          <input id="jf" type="text" class="form-control" id="judul-film" placeholder="Enter Judul">
         </div>
-        <div id="tf" class="form-group">
+        <div class="form-group tf">
           <label for="tahun-film">Tahun Rilis</label>
-          <input type="text" class="form-control" id="tahun-film" placeholder="Enter Tahun Film">
+          <input id="tf" type="text" class="form-control" id="tahun-film" placeholder="Enter Tahun Film">
         </div>
-        <div id="rf" class="form-group">
+        <div class="form-group rf">
           <label for="review-film">Review Singkat</label>
-          <input type="text" class="form-control" id="review-film" placeholder="Enter Review Film">
+          <input id="rf" type="text" class="form-control" placeholder="Enter Review Film">
         </div>
-        <button id="simpan" type="submit" class="btn btn-primary">Submit</button>
+        <input id="simpan" type="submit" value="Simpan" class="btn btn-primary btn-block">
       </form>
       </div>
     </div>
@@ -56,9 +56,7 @@
             <th scope="col" class="text-center"></th>
           </tr>
         </thead>
-        <tbody id="tbody">
-          
-        </tbody>
+        <tbody id="tbody"></tbody>
       </table>
     </div>
     <!-- Optional JavaScript -->
