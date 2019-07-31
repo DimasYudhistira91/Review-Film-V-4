@@ -9,13 +9,11 @@ class Film {
 
 // UI : menghandel user interface / tampilan antarmuka
 class UI {
-  static tampilFilm() {
-    const simpanFilm = [];
-    const films = simpanFilm;
-
-    films.forEach((i) => UI.tambahFilm(i));
+  static setFilm() {
+    const listFilms = Store.ambilFilm();
+    listFilms.forEach((i) => UI.addFilm(i));
   }
-  static tambahFilm(i) {
+  static addFilm(i) {
     const list = document.querySelector('#tbody');
     const row = document.createElement('tr');
 
@@ -27,9 +25,14 @@ class UI {
     `;
     list.appendChild(row);
   }
+  static bersihInput() {
+    document.querySelector('#jf').value = '';
+    document.querySelector('#tf').value = '';
+    document.querySelector('#rf').value = '';
+  }
   static hapusFilm(el) {
     if(el.classList.contains('hapus')) {
-      el.parentElement.parentElement.remove();
+    el.parentElement.parentElement.remove();
     }
   }
   static tampilAlert(pesan, className) {
@@ -42,17 +45,40 @@ class UI {
     // hilangkan dalam 2 detik
     setTimeout(() => document.querySelector('.alert').remove(),3000);
   }
-  static bersihInput() {
-    document.querySelector('#jf').value = '';
-    document.querySelector('#tf').value = '';
-    document.querySelector('#rf').value = '';
-  }
+  
 }
 
 // Penyimpanan
 
+class Store {
+  static ambilFilm() {
+    let movie;
+    if(localStorage.getItem('movie') === null) {
+      movie = [];
+    } else {
+      movie = JSON.parse(localStorage.getItem('movie'));
+    }
+    return movie;
+  }
+
+  static tambahFilm(film) {
+    const movie = Store.ambilFilm();
+    movie.push(film);
+    localStorage.setItem('movie', JSON.stringify(movie));
+  }
+  static hapusFilm(judul) {
+    const movie = Store.ambilFilm();
+    movie.forEach((film, index) => {
+      if(film.judul === judul) {
+        movie.splice(index, 1);
+      }
+    });
+    localStorage.setItem('movie', JSON.stringify(movie));
+  }
+}
+
 // Tampilkan Film
-document.addEventListener('DOMContentLoaded', UI.tampilFilm);
+document.addEventListener('DOMContentLoaded', UI.setFilm);
 
 // Tambahkan Film
 document.querySelector('#film-form').addEventListener('submit', (e) => {
@@ -75,7 +101,10 @@ document.querySelector('#film-form').addEventListener('submit', (e) => {
   console.log(film);
 
   // Masukkan film ke UI
-  UI.tambahFilm(film);
+  UI.addFilm(film);
+
+  // Masukkan film ke penyimpanasn
+  Store.tambahFilm(film);
 
   // Tampil Sukses
   UI.tampilAlert('Film berhasil ditambahkan', 'success');
@@ -87,7 +116,11 @@ document.querySelector('#film-form').addEventListener('submit', (e) => {
 
 // Hapus Film
 document.querySelector('#tbody').addEventListener('click', (e) => {
+  // Hapus film dari UI
   UI.hapusFilm(e.target);
+
+  // Hapus Film dari Penyimpanan
+  Store.hapusFilm(e.target.parentElement.previousElementSibling.textContent);
 
   // Tampil berhasil dihapus
   UI.tampilAlert('Film berhasil dihapus', 'warning');
