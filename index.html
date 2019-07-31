@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Review Film V.4</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a id="judul" class="navbar-brand" href="index.html"><span class="text-primary">Rev</span><img id="gambar-film" src="/img/video30px.png" alt="Film"><span class="text-primary">FiL</span></span></a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a id="daftar-film" class="nav-link" href="daftar-film.html">Daftar Film</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+          <input id="input" class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit"><img src="/img/loupe20px.png" alt="loupe20px"></button>
+        </form>
+      </nav>
+      <div id="form" class="container">
+      <form id="isi-form">
+        <div id="jf" class="form-group">
+          <label for="judul-film">Judul Film</label>
+          <input type="text" class="form-control" id="judul-film" placeholder="Enter Judul">
+        </div>
+        <div id="tf" class="form-group">
+          <label for="tahun-film">Tahun Rilis</label>
+          <input type="text" class="form-control" id="tahun-film" placeholder="Enter Tahun Film">
+        </div>
+        <div id="rf" class="form-group">
+          <label for="review-film">Review Singkat</label>
+          <input type="text" class="form-control" id="review-film" placeholder="Enter Review Film">
+        </div>
+        <button id="simpan" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      </div>
+    </div>
+    <div id="cont-table" class="container">
+      <table id="table" class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="text-center">Judul</th>
+            <th scope="col" class="text-center">Tahun</th>
+            <th scope="col" class="text-center">Review Film</th>
+            <th scope="col" class="text-center"></th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          
+        </tbody>
+      </table>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- My Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

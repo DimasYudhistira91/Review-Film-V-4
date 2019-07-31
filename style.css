@@ -1,0 +1,50 @@
+#judul {
+  font-size: 25px;
+}
+
+#gambar-film {
+  margin-top: -10px;
+}
+
+#daftar-film {
+  font-size: 18px;
+}
+
+#search {
+  width: 150px;
+}
+
+#form {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+#isi-form {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+#jf, #tf, #gf {
+  width: 250px;
+}
+
+#rf {
+  width: 480px;
+}
+
+#review-film {
+  height: 150px;
+}
+
+
+/* _______________________________________________________________ */
+/* Daftar Film CSS */
+
+#cont-table {
+  border-bottom: 1px solid grey;
+}
+
+#table {
+  margin-top: 30px;
+}
